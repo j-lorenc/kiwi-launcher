@@ -17,4 +17,5 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [],
+  externals: { sqlite3: 'commonjs sqlite3' },
 };
