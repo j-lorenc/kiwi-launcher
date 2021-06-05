@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; frame-src 'self'; style-src 'self'; img-src 'self'; child-src 'self'; script-src 'self'; connect-src 'self'"
+      content="default-src 'self'; frame-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' file://*  https://* http://media.steampowered.com/; child-src 'self'; script-src 'self'; connect-src 'self'"
     />
     <meta name="theme-color" content="#000000" />
-    <title>Template</title>
   </head>
   <body>
     <div id="root"></div>

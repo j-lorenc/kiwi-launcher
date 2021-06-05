@@ -1,0 +1,154 @@
+.game-container {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.game-container__header {
+  color: rgb(210, 210, 210);
+  font-size: 16px;
+  margin: 0;
+
+  padding: 0 10px;
+
+  font-family: Lato;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.games-lists {
+  display: flex;
+  overflow: hidden;
+}
+
+.games-list {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  width: 90vw;
+  margin: 0 auto;
+  animation: fade-in 1s, slide-up 0.5s;
+
+  &--right,
+  &--left {
+    position: absolute;
+
+    img {
+      filter: grayscale(1);
+    }
+
+    .games-list__image-container {
+      transition: none;
+      &:hover {
+        transition: none;
+        transform: none;
+      }
+    }
+  }
+
+  &--left {
+    left: calc(-85vw - 12px);
+    z-index: 3;
+  }
+
+  &--right {
+    left: calc(95vw + 12px);
+    z-index: 3;
+  }
+}
+
+.games-list__image-container {
+  display: flex;
+  align-items: flex-end;
+  margin: 30px 5px;
+  position: relative;
+  cursor: pointer;
+  flex: 0 0 220px;
+  z-index: 4;
+  user-select: none;
+  transition: z-index 0.05s step-end, transform 0.05s linear;
+  overflow: hidden;
+  
+}
+
+.games-list__image-container:first-child {
+  margin-left: 10px;
+}
+
+.games-list__image-container > div {
+  padding: 5px 10px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.games-list__image-container--shadow::after {
+  position: absolute;
+  content: ' ';
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75), inset 0px 0px 40px rgba(0, 0, 0, 1);
+  z-index: 2;
+}
+
+.games-list__image-container:hover {
+  max-height: 300px;
+  transition: z-index 0.1s step-start, transform 0.15s linear;
+  transform: scale(1.45);
+  z-index: 5;
+}
+
+.games-list__image-container:hover::after {
+  z-index: 4;
+}
+
+.games-list__image-container--vertical {
+  margin: 60px 5px;
+  flex: 0 0 180px;
+}
+
+.games-list__image-container--vertical:hover {
+  transform: scale(1.4);
+}
+
+.games-list__image-container img {
+  width: 100%;
+  transition: border 0.1s;
+  border: 3px solid rgba(0, 166, 231, 0);
+  height: 100%;
+  animation: fade-in 0.5s;
+}
+
+.games-list__image-container:hover img {
+  transition: transform 0.1s;
+  transform-origin: center;
+  transform: scale(1.1);
+  
+}
+
+.games-list__image-container:hover img::after,
+.games-list__image-container--active img::after {
+  border: 3px solid rgba(0, 166, 231, 1);
+  transition: all 0.1s;
+  padding: 0px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

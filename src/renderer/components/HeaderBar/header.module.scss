@@ -1,0 +1,46 @@
+.header-bar {
+  background: linear-gradient(rgba(15, 15, 15, 0.99), rgba(15, 15, 15, 0.99));
+  padding: 2px 5px;
+  position: relative;
+
+  backdrop-filter: blur(10px);
+}
+
+.title-bar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  &__drag-bar {
+    -webkit-app-region: drag;
+    flex: 1;
+  }
+
+  &__title {
+    &__icon {
+      width: 22px;
+      height: 22px;
+      margin-right: 5px;
+      margin-left: 5px;
+      align-self: center;
+    }
+  }
+}
+
+.settings-bar {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  & > div {
+    margin-left: 10px;
+  }
+}
+
+.icon-list {
+  display: flex;
+
+  svg {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,17 @@
+.content-section {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &--no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+.game-lists {
+  padding: 30px 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
